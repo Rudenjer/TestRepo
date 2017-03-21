@@ -1,0 +1,46 @@
+﻿<div ng-controller="OwnersController as demo">
+    <h2>All owners</h2>
+    <hr />
+    <div class="container">
+        <form class="form-inline" ng-submit="createOwner()">
+            <div class="form-group">
+                <input type="text" class = "form-control" ng-model="Name" required placeholder="Enter name"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Create" />
+            </div>
+        </form>
+    </div>
+
+    <hr />
+    Total count : {{Owners.length}}
+    <hr />
+   
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Pets count
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="owner in filteredTodos">
+            <td>
+                {{owner.Name}}
+            </td>
+            <td>
+                <a href="#/Owner/Details/{{owner.Id}}">{{owner.Pets.length}}</a>
+            </td>
+            <td>
+                <a ng-click="deleteOwner(owner.Id)">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+</div>

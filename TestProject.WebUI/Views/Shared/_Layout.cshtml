@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html ng-app="animalStoreApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Animal store</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Animal store", "Index", "Owner", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Animal store</p>
+    </footer>
+</div>
+    <script src="~/Content/Scripts/angular.js"></script>
+    <script src="~/Content/Scripts/angular-route.js"></script>
+    <script src="~/Content/Scripts/angular-animate.js"></script>
+    <script src="~/Content/Scripts/angular-sanitize.js"></script>
+    <script src="~/Content/Scripts/ui-bootstrap-tpls.js"></script>
+    <script src="~/app/Scripts/app.js"></script>
+    <script src="~/app/Controllers/OwnersController.js"></script>
+    <script src="~/app/Controllers/PetsController.js"></script>
+</body>
+</html>
